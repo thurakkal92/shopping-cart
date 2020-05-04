@@ -1,0 +1,5 @@
+export const SORT_MAP = {
+  HIGH_TO_LOW: "HIGHTOLOW",
+  LOW_TO_HIGH: "LOWTOHIGH",
+  DISCOUNT: "DISCOUNT",
+}

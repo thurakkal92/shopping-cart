@@ -1,0 +1,38 @@
+.radio {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+
+	&__input {
+		cursor: pointer;
+		height: 0;
+		width: 0;
+		&:active .radio__circle,
+		&:focus .radio__circle {
+			border: solid 1px #3366cc;
+		}
+	}
+
+	&__circle {
+		position: relative;
+		background-color: transparent;
+		border-radius: 50%;
+		&:after {
+			content: '';
+			position: absolute;
+			display: none;
+			border-radius: 50%;
+			background-color: #36c;
+		}
+	}
+	input:checked ~ .radio__circle:after {
+		display: block;
+	}
+	input:checked ~ .radio__circle {
+		background-color: #3366cc;
+		border: solid 1.5px #3366cc;
+		box-shadow: inset 0 0 0 2px #fff;
+	}
+}
