@@ -3,7 +3,7 @@
 ### A website for online shopping using react
 
 
-Website link: [https://nabeel-shoppingcart-app.herokuapp.com/](https://nabeel-shoppingcart-app.herokuapp.com/)
+Website link: [https://nabeel-shopping-cart.netlify.app/](https://nabeel-shopping-cart.netlify.app/)
 
 
 ## Install

@@ -22,22 +22,21 @@ function List({ resultData, loading }) {
     }
 
     if (range.min > 100 || range.max < 200000) {
-      sortedFilteredArray = sortedFilteredArray.filter((item) => item.price.display <= range.max && item.price.display >= range.min)
+      sortedFilteredArray = sortedFilteredArray.filter((item) => item.price.actual <= range.max && item.price.actual >= range.min)
     }
-    if (sort.type) {
-      if (sort.type === SORT_MAP.HIGH_TO_LOW) {
-        sortedFilteredArray.sort((a, b) => { return a.price.display < b.price.display ? 1 : -1 })
-      }
-      if (sort.type === SORT_MAP.LOW_TO_HIGH) {
-        sortedFilteredArray.sort((a, b) => { return a.price.display > b.price.display ? 1 : -1 })
-      }
+    if (sort.type === SORT_MAP.HIGH_TO_LOW) {
+      sortedFilteredArray.sort((a, b) => { return a.price.actual < b.price.actual ? 1 : -1 })
+    }
+    if (sort.type === SORT_MAP.LOW_TO_HIGH) {
+      sortedFilteredArray.sort((a, b) => { return a.price.actual > b.price.actual ? 1 : -1 })
+    }
 
-      if (sort.type === SORT_MAP.DISCOUNT) {
-        sortedFilteredArray.sort((a, b) => { return a.discount > b.discount ? 1 : -1 })
-      }
+    if (sort.type === SORT_MAP.DISCOUNT) {
+      sortedFilteredArray.sort((a, b) => { return a.discount > b.discount ? 1 : -1 })
     }
+
     setProductList(sortedFilteredArray)
-  }, [ sort, range, searchParam ])
+  }, [ sort, range, searchParam, resultData ])
 
   return (
     <Container>
